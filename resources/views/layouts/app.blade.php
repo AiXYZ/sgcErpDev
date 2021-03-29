@@ -23,7 +23,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-white ai-border-bottom">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <img src="{{ asset('images/horizontal_logo.png') }}" class="ai-logo" alt="SGC">
@@ -71,6 +71,24 @@
                 </div>
             </div>
         </nav>
+
+        @auth
+            <nav class="navbar navbar-light bg-light shadow-sm">
+                <div class="container">
+                    <ul class="nav ai-nav-masthead">
+                        <li class="nav-item">
+                            <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="{{ url('/') }}">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ Request::is('request') ? 'active' : '' }}" href="{{ route('request') }}">Request</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ Request::is('employee') ? 'active' : '' }}" href="{{ route('employee') }}">Employee</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        @endauth
 
         <main class="py-4">
             @yield('content')
