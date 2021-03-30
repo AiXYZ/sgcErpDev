@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header">Employee</div>
                 <div class="card-body">
-                    <form method="POST" action="{{ route('employee') }}">
+                    <form method="POST" action="{{ route('employees.store') }}">
                         @csrf
 
                         <div class="form-row">
