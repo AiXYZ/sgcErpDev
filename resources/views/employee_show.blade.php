@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header">Employee</div>
                 <div class="card-body">
-                    <form method="POST" action="">
+                    <form method="HEAD" action="{{ route('employees.index') }}">
                         @csrf
 
                         <div class="form-row">
@@ -20,7 +20,8 @@
                                 <input id="name" type="text" class="form-control-plaintext form-plain-input" name="name" value="{{ $employee->name }}" readonly>
                             </div>
                         </div>
-                        <button class="btn btn-secondary" type="submit">Back</button>
+
+                        <a class="btn btn-secondary" href="{{ route('employees.index') }}" role="button">Back</a>
                     </form>
 
                 </div>

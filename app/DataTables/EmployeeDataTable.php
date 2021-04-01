@@ -21,7 +21,12 @@ class EmployeeDataTable extends DataTable
     {
         return datatables()
             ->eloquent($query)
-            ->addColumn('action', 'employee.action');
+            ->addColumn('action', function($item) {
+                return '<div class="btn-group" role="group">
+                            <a class="btn btn-secondary" href="'.route('employees.show', $item->id).'" role="button">Show</a>
+                            <a class="btn btn-secondary" href="'.route('employees.edit', $item->id).'" role="button">Edit</a>
+                        </div>';
+            });
     }
 
     /**

@@ -85,7 +85,7 @@
                             <a class="nav-link {{ Request::is('request') ? 'active' : '' }}" href="{{ route('request') }}">Request</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{ Request::is('employees') ? 'active' : '' }}" href="{{ route('employees.index') }}">Employee</a>
+                            <a class="nav-link {{ Request::is('employees', 'employees/*') ? 'active' : '' }}" href="{{ route('employees.index') }}">Employee</a>
                         </li>
                     </ul>
                 </div>
