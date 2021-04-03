@@ -84,7 +84,14 @@ class EmployeeController extends Controller
      */
     public function update(Request $request, Employee $employee)
     {
-        //
+        $this->validate($request, [
+            'employeeId' => ['required', 'integer'],
+            'name' => ['required'],
+        ]);
+
+        $employee->update($request->all());
+
+        return redirect()->route('employees.index');
     }
 
     /**
