@@ -17,9 +17,6 @@ class XyzController extends Controller
     {
         $employee = Employee::get();
         return $employee;
-
-        // $employee = Employee::select('employee_id','name')->get();
-        // return $employee;
     }
 
     /**
